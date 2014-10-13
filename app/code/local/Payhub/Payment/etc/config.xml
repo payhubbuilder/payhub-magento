@@ -55,7 +55,7 @@
                 <logging>1</logging>
                 <api_url>https://checkout.payhub.com/transaction/api</api_url>
                 <currency>USD</currency>
-                <title>Credit Cart (Payhub)</title>
+                <title>Credit Card (Payhub)</title>
                 <cctypes>VI,MC,AE,DI</cctypes>
                 <model>payhub/method_payhub</model>
                 <order_status>processing</order_status>
