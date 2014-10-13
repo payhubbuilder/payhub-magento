@@ -104,7 +104,7 @@ class Payhub_Payment_Helper_Data extends Mage_Core_Helper_Abstract
             $config['api'] = array(
                 'url' =>  Mage::getStoreConfig('payment/payhub/api_url', $store),
                 'username' =>  Mage::getStoreConfig('payment/payhub/api_username', $store),
-                'password' =>  Mage::getStoreConfig('payment/payhub/api_password', $store),
+                'password' => Mage::helper('core')->decrypt(Mage::getStoreConfig('payment/payhub/api_password', $store)),
                 'orgid' =>  Mage::getStoreConfig('payment/payhub/account_orgid', $store),
                 'tid' =>  Mage::getStoreConfig('payment/payhub/account_tid', $store),
                 'mode' =>  Mage::getStoreConfig('payment/payhub/account_test', $store) ? 'demo' : 'live',
