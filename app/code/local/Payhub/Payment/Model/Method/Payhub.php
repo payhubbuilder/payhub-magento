@@ -165,10 +165,11 @@ class Payhub_Payment_Model_Method_Payhub extends Mage_Payment_Model_Method_Cc
                 'year' => 2020+rand()%20,
             );
         } else { 
+            $amount_formated = number_format($amount, 2, '.', '');
             $data = array(
                 'cc' => $payment->getCcNumber(),
                 'cvv' => $payment->getCcCid(),
-                'amount' => $amount,
+                'amount' => $amount_formated,
                 'month' => $payment->getCcExpMonth(),
                 'year' => $payment->getCcExpYear(),
             );
