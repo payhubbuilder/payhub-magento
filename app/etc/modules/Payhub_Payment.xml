@@ -1,9 +1,0 @@
-<?xml version="1.0"?>
-<config>
-    <modules>
-        <Payhub_Payment>
-            <active>true</active>
-            <codePool>local</codePool>
-        </Payhub_Payment>
-    </modules>
-</config>
