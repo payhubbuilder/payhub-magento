@@ -696,13 +696,13 @@ class CURL
     }
 
     private static function _end_request($ch, $http_code, $response, $content_type, $options) {
-        curl_close($ch);
-
+        
         self::$last_http_code = $http_code;
         self::$last_response = $response;
         self::$last_content_type = $content_type;
         self::$last_response_header = curl_getinfo($ch, CURLINFO_HEADER_OUT);
-
+        curl_close($ch);
+        
         if (!$http_code || substr($http_code, 0, 2) != '20') {
             // json message might be json encoded again (creating an invalid json)?
             if (stripos($content_type, 'json') !== false) {
