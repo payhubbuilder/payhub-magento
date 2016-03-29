@@ -221,7 +221,7 @@ class Payhub
         $response = null;
         $ex = null;
 
-        Log::network("|payhub||REQUEST||$action| ", $request);
+        Log::network("|payhub||REQUEST||$url_hint| ", $request);
 
         try { 
             $response = CURL::get($url, $request, array_merge(array(
@@ -234,7 +234,7 @@ class Payhub
                 ),
             ), is_null($options) ? array() : $options));
         } catch(\Exception $ex) { 
-            Log::ex($ex, "|payhub||$action|");
+            Log::ex($ex, "|payhub||$url_hint|");
 
             $response = null;
         }
@@ -246,7 +246,7 @@ class Payhub
             $response = json_decode($response, true);
         }
 
-        Log::network("|payhub||RESPONSE||$action| ", $response);
+        Log::network("|payhub||RESPONSE||$url_hint| ", $response);
 
         if (is_null($response)) { 
             throw new CustomException('API request to payhub returned with errors: ', $ex ? $ex->getMessage() : 'unknown error');
