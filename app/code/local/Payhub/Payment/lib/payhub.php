@@ -134,7 +134,7 @@ class Payhub
 
             $date_time = $date_time->modify(strval(abs($gmt_offset)) . 'sec');
 
-            $date_time = \Mage::getModel('core/date')->date(null, $date_time);
+            $date_time = \Mage::getModel('core/date')->date(null, $date_time->format('Y-m-d H:i:s'));
         }
 
         return $date_time;

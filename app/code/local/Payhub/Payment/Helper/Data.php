@@ -126,11 +126,11 @@ class Payhub_Payment_Helper_Data extends Mage_Core_Helper_Abstract
 
     public function getStore($storeId) {
         if (!$storeId) {
-            throw new Exception('No store id for ' . $i);
+            throw new Exception('No store id for ' . $storeId);
         }
         $store = Mage::getModel('core/store')->load($storeId);
         if (!$store) {
-            throw new Exception('No valid store for ' . $i);
+            throw new Exception('No valid store for ' . $storeId);
         }
         return $store;
     }
